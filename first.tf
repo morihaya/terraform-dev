@@ -14,6 +14,19 @@ resource "aws_instance" "example" {
   # Tells Terraform that this EC2 instance must be created only after the
   # S3 bucket has been created.
   depends_on = ["aws_s3_bucket.example"]
+
+  # Our Security group to allow HTTP and SSH access
+  vpc_security_group_ids = ["${aws_security_group.default.id}"]
+
+  # We're going to launch into the same subnet as our ELB. In a production
+  # environment it's more common to have a separate private subnet for
+  # backend instances.
+  subnet_id = "${aws_subnet.default.id}"
+
+  # The name of our SSH keypair we created above.
+#  key_name = "${aws_key_pair.auth.id}"
+  key_name = "morihaya-vaio"
+
 }
 
 resource "aws_eip" "ip" {

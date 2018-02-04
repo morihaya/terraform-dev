@@ -1,3 +1,5 @@
 .terraform
 provider.tf
 *.tfstate*
+start.txt
+*_
