@@ -3,7 +3,7 @@ resource "aws_s3_bucket" "example" {
   # NOTE: S3 bucket names must be unique across _all_ AWS accounts, so
   # this name must be changed before applying this example to avoid naming
   # conflicts.
-  bucket = "terraform_getting_started_guide_morihaya"
+  bucket = "morihaya-test-test"
   acl    = "private"
 }
 
@@ -25,7 +25,7 @@ resource "aws_instance" "example" {
 
   # The name of our SSH keypair we created above.
 #  key_name = "${aws_key_pair.auth.id}"
-  key_name = "morihaya-vaio"
+  key_name = "morihaya-kr"
 
 }
 

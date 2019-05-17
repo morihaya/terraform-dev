@@ -4,3 +4,6 @@ provider.tf
 start.txt
 *_
 app.terraform.io.tf
+aws
+az
+gcp
